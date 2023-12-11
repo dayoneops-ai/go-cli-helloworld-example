@@ -1,0 +1,30 @@
+builds:
+- binary: tviewex
+  goos:
+    - darwin
+    - linux
+  goarch:
+    - amd64
+    - arm64
+  env:
+    - CGO_ENABLED=0
+  flags:
+    - -mod=vendor
+
+checksum:
+  name_template: 'checksums.txt'
+
+brews:
+  -
+    name: tviewex
+    homepage: git@github.com:dayoneops-ai/homebrew-tviewex.git
+    repository:
+      owner: dayoneops-ai
+      name: tviewex
+
+release:
+  github:
+    owner: dayoneops-ai
+    name: tviewex
+  draft: false
+  target_commitish: "{{ .Commit }}"
