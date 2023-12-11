@@ -1,3 +1,3 @@
-module github.com/rivo/tview
+module tviewex
 
 go 1.21.1
