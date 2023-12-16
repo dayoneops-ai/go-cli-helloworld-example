@@ -18,10 +18,10 @@ checksum:
 brews:
   -
     name: tviewex
-    tap:
+    repository:
       owner: dayoneops-ai
       name: homebrew-tviewex
-      token: "{{ secrets.BREW_TOKEN }}"
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
     folder: Formula
     homepage: "https://github.com/dayoneops-ai/homebrew-tviewex"
     description: "Scanner"
