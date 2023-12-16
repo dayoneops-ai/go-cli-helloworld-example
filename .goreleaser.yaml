@@ -14,18 +14,24 @@ builds:
 checksum:
   name_template: 'checksums.txt'
 
-brews:
-  -
-    name: tviewex
-    homepage: git@github.com:dayoneops-ai/homebrew-tviewex.git
-    repository:
-      owner: dayoneops-ai
-      name: tviewex
-
 release:
   github:
     owner: dayoneops-ai
     name: tviewex
   draft: false
   target_commitish: "{{ .Commit }}"
-  #
+
+brews:
+  -
+    name: tviewex
+    tap:
+      owner: dayoneops.ai
+      name: homebrew-tviewex
+    homepage: git@github.com:dayoneops-ai/homebrew-tviewex.git
+    package: |-
+      # bin
+      install -Dm755 "./tviewex" "${pkgdir}/usr/bin/tviewex"
+    commit_msg_template: "pkgbuild updates"
+    folder: Formula
+    description: "Software to create fast and easy drum rolls."
+    license: "MIT"
