@@ -31,7 +31,6 @@ brews:
     dependencies:
       - name: go
         type: optional
-    
 
 sboms:
   - artifacts: archive
