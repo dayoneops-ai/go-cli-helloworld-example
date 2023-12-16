@@ -17,7 +17,7 @@ checksum:
 
 brews:
   -
-    name: homebrew-tviewex
+    name: tviewex
     repository:
       owner: dayoneops-ai
       name: homebrew-tviewex
