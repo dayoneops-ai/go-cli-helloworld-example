@@ -19,7 +19,7 @@ brews:
   - repository:
       owner: dayoneops.ai
       name: homebrew-tviewex
-      token: "{{ secrets.PUBLISHER_TOKEN }}"
+      token: "{{ secrets.BREW_TOKEN }}"
     folder: Formula
     homepage: "https://github.com/dayoneops-ai/homebrew-tviewex"
     description: "Scanner"
