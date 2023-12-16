@@ -3,6 +3,7 @@ builds:
   goos:
     - darwin
     - linux
+    - windows
   goarch:
     - amd64
     - arm64
@@ -14,20 +15,27 @@ builds:
 checksum:
   name_template: 'checksums.txt'
 
+brews:
+  - repository:
+      owner: dayoneops.ai
+      name: homebrew-tviewex
+    folder: Formula
+    homepage: "https://github.com/dayoneops-ai/homebrew-tviewex"
+    description: "Scanner"
+    license: MIT
+    test: |
+      system "#{bin}/tviewex", "--version"
+    dependencies:
+      - name: go
+        type: optional
+
+sboms:
+  - artifacts: archive
+
 release:
   github:
     owner: dayoneops-ai
     name: tviewex
   draft: false
   target_commitish: "{{ .Commit }}"
-
-brews:
-  -
-    name: tviewex
-    repository:
-      owner: dayoneops.ai
-      name: homebrew-tviewex
-    homepage: "https://github.com/dayoneops-ai/homebrew-tviewex"
-    description: "Scanner"
-    test: |
-      system "#{bin}/tviewex", "--version"
+  
