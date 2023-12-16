@@ -24,14 +24,10 @@ release:
 brews:
   -
     name: tviewex
-    tap:
+    repository:
       owner: dayoneops.ai
       name: homebrew-tviewex
-    homepage: git@github.com:dayoneops-ai/homebrew-tviewex.git
-    package: |-
-      # bin
-      install -Dm755 "./tviewex" "${pkgdir}/usr/bin/tviewex"
-    commit_msg_template: "pkgbuild updates"
-    folder: Formula
-    description: "Software to create fast and easy drum rolls."
-    license: "MIT"
+    homepage: "https://github.com/dayoneops-ai/homebrew-tviewex"
+    description: "Scanner"
+    test: |
+      system "#{bin}/tviewex", "--version"
