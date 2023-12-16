@@ -16,7 +16,12 @@ checksum:
   name_template: 'checksums.txt'
 
 brews:
-  - repository:
+  -
+    name: tviewex
+    alternative_names:
+      - tviewex@{{ .Version }}
+      - tviewex@{{ .Major }}
+    repository:
       owner: dayoneops-ai
       name: homebrew-tviewex
       token: "${{ secrets.BREW_TOKEN }}"
