@@ -38,6 +38,6 @@ sboms:
 release:
   github:
     owner: dayoneops-ai
-    name: tviewex
+    name: homebrew-tviewex
   draft: false
   target_commitish: "{{ .Commit }}"
