@@ -17,7 +17,7 @@ checksum:
 
 brews:
   - repository:
-      owner: dayoneops.ai
+      owner: dayoneops-ai
       name: homebrew-tviewex
       token: "${{ secrets.BREW_TOKEN }}"
     folder: Formula
