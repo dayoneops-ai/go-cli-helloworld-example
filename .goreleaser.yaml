@@ -19,6 +19,7 @@ brews:
   - repository:
       owner: dayoneops.ai
       name: homebrew-tviewex
+      token: "{{ secrets.PUBLISHER_TOKEN }}"
     folder: Formula
     homepage: "https://github.com/dayoneops-ai/homebrew-tviewex"
     description: "Scanner"
@@ -28,6 +29,7 @@ brews:
     dependencies:
       - name: go
         type: optional
+    
 
 sboms:
   - artifacts: archive
@@ -38,4 +40,3 @@ release:
     name: tviewex
   draft: false
   target_commitish: "{{ .Commit }}"
-  
