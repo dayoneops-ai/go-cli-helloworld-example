@@ -6,7 +6,6 @@ builds:
     - windows
   goarch:
     - amd64
-    - arm64
   env:
     - CGO_ENABLED=0
   flags:
@@ -23,6 +22,7 @@ brews:
       name: homebrew-tviewex
       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
     folder: Formula
+    download_strategy: CurlDownloadStrategy
     homepage: "https://github.com/dayoneops-ai/homebrew-tviewex"
     description: "Scanner"
     license: MIT
