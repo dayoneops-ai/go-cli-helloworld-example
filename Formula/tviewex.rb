@@ -5,42 +5,34 @@
 class Tviewex < Formula
   desc "Scanner"
   homepage "https://github.com/dayoneops-ai/homebrew-tviewex"
-  version "0.25"
+  version "0.26"
   license "MIT"
 
   depends_on "go" => :optional
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/dayoneops-ai/homebrew-tviewex/releases/download/v0.25/homebrew-tviewex_0.25_darwin_arm64.tar.gz"
-      sha256 "fa36e01cc5435386b9a58679f82cd900f29b92916bd25f9c872bcfd6e8ab2ee5"
+    url "https://github.com/dayoneops-ai/homebrew-tviewex/releases/download/v0.26/homebrew-tviewex_0.26_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+    sha256 "1fdaf36ad7853f1fcdafa9f78289c3f15069d6293c493161576b52c1cde509ec"
 
-      def install
-        bin.install "tviewex"
-      end
+    def install
+      bin.install "tviewex"
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dayoneops-ai/homebrew-tviewex/releases/download/v0.25/homebrew-tviewex_0.25_darwin_amd64.tar.gz"
-      sha256 "6782d34df542744ef97d23fa3b7121a4da5c3b16b291a66ac30c104b68037be0"
 
-      def install
-        bin.install "tviewex"
+    if Hardware::CPU.arm?
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Tviewex
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/dayoneops-ai/homebrew-tviewex/releases/download/v0.25/homebrew-tviewex_0.25_linux_amd64.tar.gz"
-      sha256 "4128931fc4c50888b3fd744dd396e104d1685a3293e73f52c7839d755488a06d"
-
-      def install
-        bin.install "tviewex"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dayoneops-ai/homebrew-tviewex/releases/download/v0.25/homebrew-tviewex_0.25_linux_arm64.tar.gz"
-      sha256 "ac7d6bf770f0e3fafa2da37b6625bd5778a4474c9edffbe6d5df026381507570"
+      url "https://github.com/dayoneops-ai/homebrew-tviewex/releases/download/v0.26/homebrew-tviewex_0.26_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "37aa10f7f91e6d921cba0405a6ac5d3700047cc115747377d763edfb25623d7b"
 
       def install
         bin.install "tviewex"
